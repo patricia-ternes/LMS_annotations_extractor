@@ -18,4 +18,4 @@ annotation files for the **Leeds Multi-session Scripted Speech Corpus**.
 
 <!-- links -->
 [colab-badge]: https://colab.research.google.com/assets/colab-badge.svg
-[extractor-notebook]: https://colab.research.google.com/github/patricia-ternes/LMS_annotations_extractor/extractor.ipynb
+[extractor-notebook]: https://colab.research.google.com/github/patricia-ternes/LMS_annotations_extractor/blob/main/extractor.ipynb
