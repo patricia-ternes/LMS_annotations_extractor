@@ -26,11 +26,8 @@ talker_gender = "F"
 3. Execute all cells. You can do this by
    - click in (Runtime > Run All)
    - or via Keyboard Shortcut: `ctrl + F9`
-
-*Note 1: A warning may be displayed. Click in `Run anyway`.*
-
-*Note 2: Before running any cell you will be connected to a virtual machine. This may take a few seconds - Just wait.*
-
+     - *Note 1: A warning may be displayed. Click in `Run anyway`.*
+     - *Note 2: Before running any cell you will be connected to a virtual machine. This may take a few seconds - Just wait.*
 4. Once the program starts running, it will quickly stop at the second cell. At this moment you must click on the `Choose files` button to select the input file (recording csv log).
 5. The following code cells should run automatically and will conclude with the automatic download of output files.
    - Depending on your web browser a box may appear asking if you want to download multiple files. Just click `Allow`.
