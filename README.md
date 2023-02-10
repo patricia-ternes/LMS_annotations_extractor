@@ -21,6 +21,9 @@ annotation files for the **Leeds Multi-session Scripted Speech Corpus** (LMS) Pr
 2. **Upload** the raw LMS/PsychoPy log file using the `Browse Files` button or `Drag\Drop` in grey box.
 3. **Variables:** use the dropdown boxes to navigate and select the desired values, then click `Submit`.
 4. **Outputs:** click `Download Output` to download the outputs.
+5. **Repeat:** if you have more than 1 file to process, you can repeat steps 1-4
+6. **Clean:** after finish, you can clean the input/output data from Streamlit by clicking the `Clean Data` button.
+   - Note this step is not necessary once Streamlit stores data in memory and *they get deleted immediately as soon as they’re not needed anymore*. See more [here](https://docs.streamlit.io/knowledge-base/using-streamlit/where-file-uploader-store-when-deleted).
 
 ## Instructions: Jupyter Notebook
 
@@ -50,5 +53,5 @@ talker_gender = "F"
 [colab-badge]: https://colab.research.google.com/assets/colab-badge.svg
 [extractor-notebook]: https://colab.research.google.com/github/patricia-ternes/LMS_annotations_extractor/blob/main/extractor.ipynb
 [streamlit-badge]: https://static.streamlit.io/badges/streamlit_badge_black_white.svg
-[tool]: https://patricia-ternes-lms-annotations-extractor.streamlit.app/
+[tool]: https://patricia-ternes-lms-annotation-extractor-tool.streamlit.app/
 [github-release]: https://img.shields.io/github/v/release/patricia-ternes/LMS_annotations_extractor
