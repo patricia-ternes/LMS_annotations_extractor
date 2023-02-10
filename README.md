@@ -51,7 +51,7 @@ talker_gender = "F"
 
 <!-- links -->
 [colab-badge]: https://colab.research.google.com/assets/colab-badge.svg
-[extractor-notebook]: https://colab.research.google.com/github/patricia-ternes/LMS_annotations_extractor/blob/main/extractor.ipynb
+[extractor-notebook]: https://colab.research.google.com/github/patricia-ternes/LMS_annotations_extractor/blob/main/notebooks/extractor.ipynb
 [streamlit-badge]: https://static.streamlit.io/badges/streamlit_badge_black_white.svg
 [tool]: https://patricia-ternes-lms-annotation-extractor-tool.streamlit.app/
 [github-release]: https://img.shields.io/github/v/release/patricia-ternes/LMS_annotations_extractor
