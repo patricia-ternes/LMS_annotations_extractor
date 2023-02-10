@@ -119,6 +119,20 @@ def main():
                 outputs.append(task_df)
                 names.append(output_name)
 
+            # Tapping extraction
+            tapping_df = data[
+                data["task_name"] == "tapping"
+            ]  # select rows with tapping values
+            tapping_df = (
+                tapping_df["trial_tapping_button.timesOn"]
+                .dropna()
+                .reset_index(drop=True)
+            )  # remove empty row
+            tapping_str = "".join(tapping_df)  # transform the cell into a string
+            tapping_str = tapping_str.replace("[", "")  # remove character
+            tapping_str = tapping_str.replace("]", "")  # remove character
+            tapping = "\n".join(tapping_str.split(", "))
+
             # Transform data into a zip file
             with ZipFile("output.zip", "w") as csv_zip:
                 # annotation files
@@ -127,6 +141,9 @@ def main():
 
                 # segmentation file
                 csv_zip.writestr(output_path + "_segmentation.txt", segmentation)
+
+                # tapping file
+                csv_zip.writestr(output_path + "_tapping.csv", tapping)
 
             # Download Zip File
             st.subheader("Outputs")
