@@ -1,5 +1,9 @@
 # LMS Annotations Extractor
 
+[![Open in Streamlit][streamlit-badge]][tool]
+[![Open in Colab][colab-badge]][extractor-notebook]
+![Release Badge][github-release]
+
 ## Description
 
 In this repository you can find the `Extractor Tool` used to generate the
@@ -11,7 +15,14 @@ annotation files for the **Leeds Multi-session Scripted Speech Corpus** (LMS) Pr
 - PDRA: James Carter <j.m.a.carter@leeds.ac.uk>
 - RSE: Patricia Ternes <p.ternesdallagnollo@leeds.ac.uk>
 
-## Instructions
+## Instructions: Streamlit
+
+1. **Open** the `LMS Annotation Extractor Tool` on Streamlit by clicking this button [![Open in Streamlit][streamlit-badge]][tool]
+2. **Upload** the raw LMS/PsychoPy log file using the `Browse Files` button or `Drag\Drop` in grey box.
+3. **Variables:** use the dropdown boxes to navigate and select the desired values, then click `Submit`.
+4. **Outputs:** click `Download Output` to download the outputs.
+
+## Instructions: Jupyter Notebook
 
 1. Run the `extractor-notebook` on Google Colab by clicking this button [![Open in Colab][colab-badge]][extractor-notebook]
    - Note: you will need a Google account
@@ -38,3 +49,6 @@ talker_gender = "F"
 <!-- links -->
 [colab-badge]: https://colab.research.google.com/assets/colab-badge.svg
 [extractor-notebook]: https://colab.research.google.com/github/patricia-ternes/LMS_annotations_extractor/blob/main/extractor.ipynb
+[streamlit-badge]: https://static.streamlit.io/badges/streamlit_badge_black_white.svg
+[tool]: https://patricia-ternes-lms-annotations-extractor.streamlit.app/
+[github-release]: https://img.shields.io/github/v/release/patricia-ternes/LMS_annotations_extractor
