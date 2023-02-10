@@ -119,7 +119,7 @@ def main():
             with ZipFile("output.zip", "w") as csv_zip:
                 # annotation files
                 for i in range(len(outputs)):
-                    csv_zip.writestr(names[i], "\n".join(task_df))
+                    csv_zip.writestr(names[i], "\n".join(outputs[i]))
 
             # Download Zip File
             st.subheader("Outputs")
