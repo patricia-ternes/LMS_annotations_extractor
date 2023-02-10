@@ -92,6 +92,7 @@ def main():
             # Repeat the following for every task
             output_path = "_".join([corpus, talker_ID, talker_G, session_ID])
             outputs, names = [], []
+            segmentation = ""
             for i in range(len(tasks_ID)):
                 task_df = data[
                     data["task_name"] == task_names[i]
@@ -102,6 +103,9 @@ def main():
                 task_df.index = (
                     task_df.reset_index(drop=True).index + 1
                 )  # reset index, starting at 1
+                segmentation += (
+                    "\t".join(task_df) + "\n\n"
+                )  # organise text to segmentation file
                 task_df = (
                     task_df.index.astype(str) + ". " + task_df
                 )  # add index to text
@@ -120,6 +124,9 @@ def main():
                 # annotation files
                 for i in range(len(outputs)):
                     csv_zip.writestr(names[i], "\n".join(outputs[i]))
+
+                # segmentation file
+                csv_zip.writestr(output_path + "_segmentation.txt", segmentation)
 
             # Download Zip File
             st.subheader("Outputs")
