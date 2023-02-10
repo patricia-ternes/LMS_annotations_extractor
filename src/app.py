@@ -131,7 +131,13 @@ def main():
             tapping_str = "".join(tapping_df)  # transform the cell into a string
             tapping_str = tapping_str.replace("[", "")  # remove character
             tapping_str = tapping_str.replace("]", "")  # remove character
-            tapping = "\n".join(tapping_str.split(", "))
+            tapping_df = pd.DataFrame(tapping_str.split(", "), columns=["tapping"])
+            tapping_df = tapping_df.apply(
+                pd.to_numeric, downcast="float", errors="coerce"
+            )
+            tapping_df["tapping_2"] = tapping_df.shift(periods=1)
+            tapping_df["diff"] = tapping_df["tapping"].subtract(tapping_df["tapping_2"])
+            tapping_df = tapping_df.drop(columns=["tapping_2"])
 
             # Transform data into a zip file
             with ZipFile("output.zip", "w") as csv_zip:
@@ -143,7 +149,10 @@ def main():
                 csv_zip.writestr(output_path + "_segmentation.txt", segmentation)
 
                 # tapping file
-                csv_zip.writestr(output_path + "_tapping.csv", tapping)
+                csv_zip.writestr(
+                    output_path + "_tapping.csv",
+                    tapping_df.to_csv(index=False, header=True),
+                )
 
             # Download Zip File
             st.subheader("Outputs")
