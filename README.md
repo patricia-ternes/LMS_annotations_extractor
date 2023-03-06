@@ -27,6 +27,8 @@ annotation files for the **Leeds Multi-session Scripted Speech Corpus** (LMS) Pr
 
 ## Instructions: Jupyter Notebook
 
+*NOTE: The Jupyter Notebook version of the `Extractor Tool` is deprecated.*
+
 1. Run the `extractor-notebook` on Google Colab by clicking this button [![Open in Colab][colab-badge]][extractor-notebook]
    - Note: you will need a Google account
 2. Fill the talker/session values in the first code box (these values are used to properly name the output files):
