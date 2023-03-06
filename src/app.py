@@ -89,8 +89,9 @@ def main():
             submitted = st.form_submit_button("Submit")
 
         if submitted:
-            # Repeat the following for every task
             output_path = "_".join([corpus, talker_ID, talker_G, session_ID])
+            
+            # Repeat the following for every task
             outputs, names = [], []
             segmentation = ""
             for i in range(len(tasks_ID)):
@@ -140,6 +141,11 @@ def main():
             tapping_df["diff"] = tapping_df["tapping"].subtract(tapping_df["tapping_2"])
             tapping_df = tapping_df.drop(columns=["tapping_2"])
 
+            # Word plus carrier sentence
+            carrier_df = data[data["task_name"] == "word"]
+            carrier_df = carrier_df["item_text"].dropna()
+            carrier_df = "now say " + carrier_df + " for me"
+
             # Transform data into a zip file
             with ZipFile("output.zip", "w") as csv_zip:
                 # annotation files
@@ -154,6 +160,18 @@ def main():
                     output_path + "_tapping.csv",
                     tapping_df.to_csv(index=False, header=True),
                 )
+
+                # Word & carrier sentence file
+                file = "_".join(
+                    [
+                        corpus,
+                        "word",
+                        talker_ID,
+                        talker_G,
+                        session_ID + "-carrier_sentence.txt",
+                    ]
+                )
+                csv_zip.writestr(file, carrier_df.to_csv(index=False, header=False))
 
             # Download Zip File
             st.subheader("Outputs")
