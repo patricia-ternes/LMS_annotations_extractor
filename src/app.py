@@ -90,7 +90,7 @@ def main():
 
         if submitted:
             output_path = "_".join([corpus, talker_ID, talker_G, session_ID])
-            
+
             # Repeat the following for every task
             outputs, names = [], []
             segmentation = ""
