@@ -106,18 +106,22 @@ def main():
                 segmentation += (
                     "\t".join(task_df) + "\n\n"
                 )  # organise text to segmentation file
-                task_df = (
+                task_index_df = (
                     task_df.index.astype(str) + ". " + task_df
                 )  # add index to text
 
                 # Define output name, based in variables
-                output_name = "_".join(
+                output_name1 = "_".join(
                     [corpus, tasks_ID[i], talker_ID, talker_G, session_ID + ".txt"]
                 )
-
+                output_name2 = "_".join(
+                    [corpus, tasks_ID[i], talker_ID, talker_G, session_ID + "_clean.txt"]
+                )
                 # Store data and names
+                outputs.append(task_index_df)
+                names.append(output_name1)
                 outputs.append(task_df)
-                names.append(output_name)
+                names.append(output_name2)
 
             # Tapping extraction
             tapping_df = data[
