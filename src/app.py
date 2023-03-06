@@ -111,17 +111,14 @@ def main():
                 )  # add index to text
 
                 # Define output name, based in variables
-                output_name1 = "_".join(
-                    [corpus, tasks_ID[i], talker_ID, talker_G, session_ID + ".txt"]
-                )
-                output_name2 = "_".join(
-                    [corpus, tasks_ID[i], talker_ID, talker_G, session_ID + "_clean.txt"]
+                output_name = "_".join(
+                    [corpus, tasks_ID[i], talker_ID, talker_G, session_ID]
                 )
                 # Store data and names
                 outputs.append(task_index_df)
-                names.append(output_name1)
+                names.append(output_name + ".txt")
                 outputs.append(task_df)
-                names.append(output_name2)
+                names.append(output_name + "_clean.txt")
 
             # Tapping extraction
             tapping_df = data[
